@@ -5,25 +5,35 @@
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import axios from "axios"
+export default {
+  name: "App",
+  data() {
+    return{
+      APIKey: "bc22a5be773ad9458a21bb437ea19ca7",
+      city: "Brighton"
     }
-  }
+  },
+  created() {
+    this.getCurrentWeather();
+  },
+  methods: {
+    getCurrentWeather() {
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${this.APIKey}`)
+      .then((res) => {
+      console.log(res.data)
+    });
+  },
+ },
+}
+</script>
+
+<style lang="scss">
+* {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 </style>
