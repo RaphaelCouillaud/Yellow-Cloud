@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    
+    <Nav />
     <router-view/>
   </div>
 </template>
@@ -8,12 +8,15 @@
 <script>
 import axios from "axios";
 import db from "./firebase/firebasedb";
+import Nav from "./components/Nav";
 export default {
   name: "App",
+  components: {
+    Nav    
+  },
   data() {
     return{
       APIKey: "bc22a5be773ad9458a21bb437ea19ca7",
-      city: "La Rochelle",
       cities: [],
     };
   },
@@ -44,12 +47,7 @@ export default {
       })
     },
 
-    getCurrentWeather() {
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${this.APIKey}`)
-      .then((res) => {
-      console.log(res.data)
-    });
-  },
+    
  },
 }
 </script>
@@ -60,5 +58,8 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+#app {
+  height: 100vh;
 }
 </style>
