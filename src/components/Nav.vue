@@ -30,6 +30,7 @@ nav {
     display: flex;
     padding: 30px 0;
     justify-content: space-between;
+    width: 100%;
 }
 .navactions i:nth-child(2), .navactions i:nth-child(3) {
     margin-left: 20px;

@@ -30,10 +30,10 @@ export default {
   min-height: 100vh;
   border: 3px solid green;
 }
-@media screen  and (max-width : 475px)
+@media screen  and (max-width : 480px)
 {
   .grid {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   }
 }
 </style>
