@@ -41,41 +41,77 @@ export default {
 
 <style lang="scss" scoped>
 .cityview {
-  border: 3px solid yellow;
+ 
   display: flex;
   position: relative;
-  padding: 20px;
-  width: 100%;
-}
-.cityprops, .weather {
+  flex-direction: row;  
+  width: 480px;  
+  height: 360px;  
+  }
+.cityprops {
   display: flex;
-  margin: auto;
-  flex-direction: column;
- border: 3px solid black; 
+  margin: 0 auto;
+  flex-direction: column; 
 align-items: flex-start;
+width: 80%;
+height: 100%;
+justify-content: start;
 }
-.cityname {  
-  font-size: 3em;  
+.cityprops h2 {
+   font-size: 3.5em;  
 letter-spacing: 1.5px;
  -webkit-text-stroke: 1.5px black;
- color: transparent;
- text-shadow: 5px 0 #bc040c;
+ color: white;
+ font-weight: bolder;
+ text-shadow: 4px 0 #bc040c;
 text-transform: uppercase;
 hyphens: auto;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	-ms-hyphens: auto;
 overflow-wrap: break-word;
+margin: 0 0 0 10px;
+}
+.cityprops p {
+   font-size: 2.5em;  
+letter-spacing: 1.5px;
+ -webkit-text-stroke: 1.5px black;
+ color: white;
+ text-shadow: 4px 0 #fcfc04;
+text-transform: uppercase;
+hyphens: auto;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+overflow-wrap: break-word;
+margin: 0 0 0 10px;
+}
+.cityweather {  
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: auto;
+  text-align: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.5);  
+}
+.cityweather p {  
+  margin: 0;  
+  color: white;
+}
+.cityicon img {
+  width: 100%;
+  height: auto;
 }
 .gif {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 480px;
-  max-height: 360px;
+  height: 100%;
   z-index: -1;
-  object-fit: cover;
-  overflow: hidden;
+  overflow: hidden;  
+ 
 }
 </style>

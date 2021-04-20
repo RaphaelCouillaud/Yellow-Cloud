@@ -24,16 +24,19 @@ export default {
 
 <style lang="scss" scoped>
 .grid {
-  display: grid;
-  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
   width: 100%;
-  min-height: 100vh;
-  border: 3px solid green;
+  min-height: 100vh; 
+  margin: auto;
+}
+.citycomponent {
+  margin: auto;
+ 
 }
 @media screen  and (max-width : 480px)
 {
-  .grid {
-  grid-template-columns: repeat(1, 1fr);
-  }
+  
 }
 </style>
