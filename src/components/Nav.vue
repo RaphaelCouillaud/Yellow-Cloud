@@ -25,6 +25,7 @@ header {
     max-width: 1024px;
     border: 3px solid red;
     padding: 0 20px;
+    background: #60bcf4;
 }
 nav {
     display: flex;

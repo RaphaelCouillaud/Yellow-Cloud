@@ -3,7 +3,7 @@
 
    <div class="cityprops">
       <h2>{{this.city.city}}</h2>       
-      <p>{{this.city.currentWeather.main.temp}}&deg;</p>  
+      <p>{{Math.round(this.city.currentWeather.main.temp)}}&deg;</p>  
   </div>
 
   <div class="cityweather">
@@ -55,15 +55,15 @@ export default {
 align-items: flex-start;
 width: 80%;
 height: 100%;
-justify-content: start;
+
 }
 .cityprops h2 {
-   font-size: 3.5em;  
+   font-size: 3em;  
 letter-spacing: 1.5px;
- -webkit-text-stroke: 1.5px black;
+ -webkit-text-stroke: 2.5px black;
  color: white;
- font-weight: bolder;
- text-shadow: 4px 0 #bc040c;
+ font-weight: lighter;
+ text-shadow: 5px 0 #fcd40c;
 text-transform: uppercase;
 hyphens: auto;
 	-webkit-hyphens: auto;
@@ -75,9 +75,10 @@ margin: 0 0 0 10px;
 .cityprops p {
    font-size: 2.5em;  
 letter-spacing: 1.5px;
- -webkit-text-stroke: 1.5px black;
+font-weight: lighter;
+ -webkit-text-stroke: 2px black;
  color: white;
- text-shadow: 4px 0 #fcfc04;
+ text-shadow: 4px 0 #fcd40c;
 text-transform: uppercase;
 hyphens: auto;
 	-webkit-hyphens: auto;
@@ -90,19 +91,24 @@ margin: 0 0 0 10px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  width: 20%;
-  height: auto;
+  width: 12%;
+  height: 100%;
   text-align: center;
   justify-content: space-between;
   background: rgba(0, 0, 0, 0.5);  
 }
-.cityweather p {  
-  margin: 0;  
+.cityweather p, .cityweather i {  
+  margin: 0 auto;  
   color: white;
+   font-size: 1.5em; 
+}
+.cityweather p {
+   color: #fcd40c;
 }
 .cityicon img {
-  width: 100%;
+  width: 80%;
   height: auto;
+  padding: 5px;
 }
 .gif {
   position: absolute;
