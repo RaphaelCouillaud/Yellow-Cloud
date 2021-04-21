@@ -62,5 +62,6 @@ export default {
   height: 100vh;
   max-width: 1024px;
   margin: 0 auto;
+  width: 100%;
 }
 </style>

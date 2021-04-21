@@ -40,13 +40,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cityview {
- 
+.cityview { 
   display: flex;
   position: relative;
-  flex-direction: row;  
-  width: 480px;  
-  height: 360px;  
+  flex-direction: row;   
+  max-width: 450px;  
+  max-height: 360px;
+  width: 100%;
+  height: 100%; 
   }
 .cityprops {
   display: flex;
@@ -118,6 +119,18 @@ margin: 0 0 0 10px;
   height: 100%;
   z-index: -1;
   overflow: hidden;  
+}
+.gif img {
+ width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen  and (min-width : 480px)
+{
  
+ .gif img { 
+  object-fit: fill;
+}
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
-  <header class="newcity">
+  <header>
       <nav>
-          <span>Nouveau lieu</span>
+          <div class="add">Nouveau lieu</div>
+          <h1><strong>Yellow</strong> <i class="fas fa-cloud"></i> <strong>Cloud</strong></h1> 
           <div class="navactions">
               <i class="fas fa-edit"></i>
               <i class="fas fa-sync-alt"></i>
@@ -20,23 +21,68 @@ export default {
 <style lang="scss" scoped>
 header {
     z-index: 99;
-    position: fixed;
+    position: sticky;
+    margin: auto;
     width: 100%;
-    max-width: 1024px;
-    border: 3px solid red;
-    padding: 0 20px;
-    background: #60bcf4;
+    max-width: 1024px;  
+    background: linear-gradient(
+    to right,
+    #ffffff,
+    #60bcf4,
+    #2980b9
+  ); 
 }
 nav {
+    display: flex;    
+    justify-content: space-around;   
+    margin: auto;
+    align-items: center;
+}
+.add {
+    margin: 0 auto;   
+    text-align: center;
+}
+h1 {
+   font-size: 1.5em;  
+letter-spacing: 1.5px;
+ -webkit-text-stroke: 2.5px black;
+ color: white;
+ font-weight: lighter;
+ text-shadow: 5px 0 #fcd40c;
+text-transform: uppercase;
+hyphens: auto;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+overflow-wrap: break-word;
+margin: 0 auto;
+text-align: center;
+}
+h1 i {   
+ -webkit-text-stroke: 2.5px black;
+ color: #fcd40c;
+ text-shadow: 10px 0 white;
+}
+h1 strong{
+  display: none;
+}
+.navactions {
+    margin: 0 auto;
     display: flex;
-    padding: 30px 0;
     justify-content: space-between;
-    width: 100%;
+    
 }
 .navactions i:nth-child(2), .navactions i:nth-child(3) {
-    margin-left: 20px;
+    padding-left: 10px;
 }
 .navactions i {
-    font-size: 2em;
+    font-size: 1.5em;
+     margin: auto;
+}
+@media screen  and (min-width : 768px)
+{
+  h1 strong{
+  display: inline;
+}
 }
 </style>

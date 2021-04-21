@@ -26,17 +26,26 @@ export default {
 .grid {
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 25px;
   width: 100%;
   min-height: 100vh; 
-  margin: auto;
+  margin: 0 auto;
+  
 }
 .citycomponent {
-  margin: auto;
+  margin: 0 auto;
+   padding-bottom: 25px;
  
 }
-@media screen  and (max-width : 480px)
+
+  @media screen  and (min-width : 768px)
 {
-  
+  .grid { 
+  display: flex;  
+  flex-direction: row; 
+  flex-wrap: wrap;
+  }
+ 
+
 }
 </style>
