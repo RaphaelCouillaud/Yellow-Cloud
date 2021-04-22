@@ -1,12 +1,12 @@
 <template>
-  <header>
+  <header class="addEvents">
       <nav>
           <div class="add">Nouveau lieu</div>
           <h1><strong>Yellow</strong> <i class="fas fa-cloud"></i> <strong>Cloud</strong></h1> 
           <div class="navactions">
               <i class="fas fa-edit"></i>
               <i class="fas fa-sync-alt"></i>
-              <i class="far fa-plus-square"></i>
+              <i v-on:click="addCity" class="far fa-plus-square"></i>
           </div>
       </nav>
   </header>
@@ -15,6 +15,11 @@
 <script>
 export default {
     name: "Nav",
+    methods: {
+        addCity() {
+            this.$emit("addEvents");
+        }
+    }
 }
 </script>
 

@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <Nav />
+    <Modal v-if="showModal" v-on:close-modal="toggleModal"/>
+    <Nav v-on:addEvents="toggleModal" />
+   
     <router-view v-bind:cities="cities" />
   </div>
 </template>
@@ -9,15 +11,19 @@
 import axios from "axios";
 import db from "./firebase/firebasedb";
 import Nav from "./components/Nav";
+import Modal from "./components/Modal";
 export default {
   name: "App",
   components: {
-    Nav    
+    Nav,
+    Modal    
   },
   data() {
     return{
       APIKey: "bc22a5be773ad9458a21bb437ea19ca7",
       cities: [],
+      showModal: null,
+
     };
   },
   created() {
@@ -44,7 +50,9 @@ export default {
         });
       })
     },
-
+    toggleModal() {
+      this.showModal = !this.showModal;
+    }
     
  },
 }
