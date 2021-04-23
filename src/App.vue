@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Modal v-if="showModal" v-on:close-modal="toggleModal"/>
+    <Modal v-if="showModal" v-on:close-modal="toggleModal" v-bind:APIKey="APIKey"/>
     <Nav v-on:addEvents="toggleModal" />
    
     <router-view v-bind:cities="cities" />
@@ -65,6 +65,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: pointer;
 }
 #app {
   height: 100vh;

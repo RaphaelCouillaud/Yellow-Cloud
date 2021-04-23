@@ -6,7 +6,7 @@
           <div class="navactions">
               <i class="fas fa-edit"></i>
               <i class="fas fa-sync-alt"></i>
-              <i v-on:click="addCity" class="far fa-plus-square"></i>
+              <i v-on:click="addCity" class="fas fa-map-marker-alt"></i>
           </div>
       </nav>
   </header>
