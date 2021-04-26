@@ -25,16 +25,40 @@
     <div class="gif">       
         <img :src="require(`../../public/gif/${this.city.currentWeather.weather[0].icon}.gif`)" alt="">
     </div>
+
+    <div v-if="edit" v-on:click="deleteCity" class="edit" ref="edit">       
+        <i class="far fa-times-circle" ></i>
+    </div>
     
  </div>
 </template>
 
 <script>
+import db from "../firebase/firebasedb";
 export default {
     name: "City",
-    props: ['city'],
+    props: ['city', 'edit'],
     created() {
-      console.log(this.city);
+         },
+    data () {
+      return {
+        id: null,
+      }
+    },
+    methods: {
+      deleteCity() {
+       db.collection('cities')
+       .where('city', '==', `${this.city.city}`)
+       .get().then(docs => {
+         docs.forEach(doc => {
+           this.id = doc.id;
+         });
+       }).then(() => {
+         db.collection('cities')
+         .doc(this.id)
+         .delete();
+       });
+      },
     },
 };
 </script>
@@ -124,6 +148,20 @@ margin: 0 0 0 10px;
  width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.edit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding: 5px;
+}
+.fa-times-circle {
+  color: #bc040c;
+  font-size: 2.5em;
+  margin: auto;
+  font-weight: bolder;
+
 }
 
 @media screen  and (min-width : 480px)

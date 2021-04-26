@@ -1,7 +1,7 @@
 <template>
   <div class="grid">
     <div class="citycomponent" v-for="(city, index) in cities" v-bind:key="index"> <!--Générer chaque city component dynamiquement-->
-    <City v-bind:city="city"/>
+    <City v-bind:city="city" v-bind:edit="edit"/>
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@ import City from "../components/City";
 
 export default {
   name: 'AddCity',
-  props: ['cities'], //depuis vbind app.vue
+  props: ['cities', 'edit'], //depuis vbind app.vue
   created() {
     console.log(this.city);
   },

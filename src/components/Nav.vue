@@ -4,8 +4,8 @@
           <div class="add">Nouveau lieu</div>
           <h1><strong>Yellow</strong> <i class="fas fa-cloud"></i> <strong>Cloud</strong></h1> 
           <div class="navactions">
-              <i class="fas fa-edit"></i>
-              <i v-on:click="RefreshWeather" class="fas fa-sync-alt"></i>
+              <i v-on:click="editCities" ref="editCities" class="fas fa-edit"></i>
+              <i v-on:click="refreshWeather" class="fas fa-sync-alt"></i>
               <i v-on:click="addCity" class="fas fa-map-marker-alt"></i>
           </div>
       </nav>
@@ -19,9 +19,13 @@ export default {
         addCity() {
             this.$emit("addEvents");
         },
-        RefreshWeather() {
+        refreshWeather() {
             location.reload();
         },
+        editCities() {
+            this.$refs.editCities.classList.toggle('edit-active');
+            this.$emit("edit-city");
+        }
     }
 }
 </script>
@@ -86,6 +90,9 @@ h1 strong{
 .navactions i {
     font-size: 1.5em;
      margin: auto;
+}
+.edit-active {
+    color: #bc040c;
 }
 @media screen  and (min-width : 768px)
 {

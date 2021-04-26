@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <Modal v-if="showModal" v-on:close-modal="toggleModal" v-bind:APIKey="APIKey"/>
-    <Nav v-on:addEvents="toggleModal" />
+    <Nav v-on:addEvents="toggleModal" v-on:edit-city="toggleCity"/>
    
-    <router-view v-bind:cities="cities" />
+    <router-view v-bind:cities="cities" v-bind:edit="edit"/>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
       APIKey: "bc22a5be773ad9458a21bb437ea19ca7",
       cities: [],
       showModal: null,
-
+      edit: null,
     };
   },
   created() {
@@ -50,14 +50,18 @@ export default {
             }
           } else if (doc.type === 'added' && doc.doc.Nd) {
           this.cities.push(doc.doc.data());
+          } else if (doc.type === 'removed') {
+          this.cities = this.cities.filter((city) => city.city !== doc.doc.data().city)
           }
         });
       });
     },
     toggleModal() {
       this.showModal = !this.showModal;
+    },
+    toggleCity() {
+      this.edit = !this.edit;
     }
-    
  },
 }
 </script>
