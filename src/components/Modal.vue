@@ -87,8 +87,6 @@ input {
     margin-bottom: 5px;
 }
 input:focus {
-    color: white;
-    border: none;   
     border: 3px solid black;
 }
 button {

@@ -5,7 +5,7 @@
           <h1><strong>Yellow</strong> <i class="fas fa-cloud"></i> <strong>Cloud</strong></h1> 
           <div class="navactions">
               <i class="fas fa-edit"></i>
-              <i class="fas fa-sync-alt"></i>
+              <i v-on:click="RefreshWeather" class="fas fa-sync-alt"></i>
               <i v-on:click="addCity" class="fas fa-map-marker-alt"></i>
           </div>
       </nav>
@@ -18,7 +18,10 @@ export default {
     methods: {
         addCity() {
             this.$emit("addEvents");
-        }
+        },
+        RefreshWeather() {
+            location.reload();
+        },
     }
 }
 </script>

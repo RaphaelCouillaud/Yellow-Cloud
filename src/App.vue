@@ -34,7 +34,9 @@ export default {
       let firebaseData = db.collection('cities'); //Nom de la collection Firestore
       firebaseData.onSnapshot(snap => {
         snap.docChanges().forEach(async(doc) => {
-          if (doc.type === 'added') {
+          console.log(doc.type);
+          console.log(doc);
+          if (doc.type === 'added' && !doc.doc.Nd) {
             try {
               const responseAPI = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${doc.doc.data().city}&units=metric&lang=fr&appid=${this.APIKey}`);
               const dataDb = responseAPI.data;
@@ -46,9 +48,11 @@ export default {
             } catch (err) {
               console.log(err);
             }
+          } else if (doc.type === 'added' && doc.doc.Nd) {
+          this.cities.push(doc.doc.data());
           }
         });
-      })
+      });
     },
     toggleModal() {
       this.showModal = !this.showModal;
