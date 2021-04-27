@@ -81,22 +81,25 @@ label {
 }
 input {
     color: black;
-    background-color: transparent;
+   background: rgba(255, 255, 255, 0.75); 
     border: 3px solid #fcd40c;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 input:focus {
     border: 3px solid black;
+    background-color: #fcd40c;
+    font-weight: bolder;
 }
 button {
     background-color: #fcd40c;
     color: black;    
-    border: 3px solid black;
+   
     margin: auto;
     font-size: 1.1em;
     font-family: 'Gloria Hallelujah', Helvetica, Arial, sans-serif;
     font-weight: bolder;
+    
 
 }
 

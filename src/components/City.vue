@@ -27,7 +27,7 @@
     </div>
 
     <div v-if="edit" v-on:click="deleteCity" class="edit" ref="edit">       
-        <i class="far fa-times-circle" ></i>
+        <i class="far fa-times" ></i>
     </div>
     
  </div>
@@ -154,13 +154,14 @@ margin: 0 0 0 10px;
   bottom: 0;
   left: 0;
   display: flex;
-  padding: 5px;
+  margin-left: 10px;
 }
-.fa-times-circle {
+.fa-times {
   color: #bc040c;
   font-size: 2.5em;
   margin: auto;
   font-weight: bolder;
+  -webkit-text-stroke: 1.5px white;
 
 }
 

@@ -1,12 +1,13 @@
 <template>
   <header class="addEvents">
-      <nav>
-          <div class="add">Nouveau lieu</div>
+      <nav>   
+          <div class="refresh"> 
+           <i v-on:click="refreshWeather" class="fas fa-sync-alt"></i> 
+           </div>     
           <h1><strong>Yellow</strong> <i class="fas fa-cloud"></i> <strong>Cloud</strong></h1> 
           <div class="navactions">
-              <i v-on:click="editCities" ref="editCities" class="fas fa-edit"></i>
-              <i v-on:click="refreshWeather" class="fas fa-sync-alt"></i>
-              <i v-on:click="addCity" class="fas fa-map-marker-alt"></i>
+              <i v-on:click="editCities" ref="editCities" class="fas fa-minus"></i>             
+              <i v-on:click="addCity" class="fas fa-plus"></i>
           </div>
       </nav>
   </header>
@@ -50,7 +51,7 @@ nav {
     margin: auto;
     align-items: center;
 }
-.add {
+.refresh {
     margin: 0 auto;   
     text-align: center;
 }
@@ -84,15 +85,17 @@ h1 strong{
     justify-content: space-between;
     
 }
-.navactions i:nth-child(2), .navactions i:nth-child(3) {
-    padding-left: 10px;
+.navactions i:nth-child(2) {
+    padding-left: 25px;
 }
-.navactions i {
+.navactions i, .refresh i {
     font-size: 1.5em;
      margin: auto;
+ text-shadow: 3px 0 #fcd40c;
 }
 .edit-active {
     color: #bc040c;
+   transform: scale(1.25);
 }
 @media screen  and (min-width : 768px)
 {
