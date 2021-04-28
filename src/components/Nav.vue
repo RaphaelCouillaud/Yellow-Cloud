@@ -6,8 +6,8 @@
            </div>     
           <h1><strong>Yellow</strong> <i class="fas fa-cloud"></i> <strong>Cloud</strong></h1> 
           <div class="navactions">
-              <i v-on:click="editCities" ref="editCities" class="fas fa-minus"></i>             
               <i v-on:click="addCity" class="fas fa-plus"></i>
+              <i v-on:click="editCities" ref="editCities" class="fas fa-minus"></i>  
           </div>
       </nav>
   </header>

@@ -7,11 +7,7 @@
   </div>
 
   <div class="cityweather">
-      <div class="cityicon"><img :src="require(`../../public/img/${this.city.currentWeather.weather[0].icon}.png`)" alt=""></div>
-      <div class="cityclouds">
-        <i class="fas fa-cloud"></i>
-        <p>{{this.city.currentWeather.clouds.all}}%</p>
-      </div>
+      <div class="cityicon"><img :src="require(`../../public/img/${this.city.currentWeather.weather[0].icon}.png`)" alt=""></div>      
       <div class="citywindspeed">
         <i class="fas fa-wind"></i>
         <p>{{this.city.currentWeather.wind.speed}}</p>
@@ -19,6 +15,10 @@
       <div class="citywinddirection">
         <i class="far fa-compass"></i>
         <p>{{this.city.currentWeather.wind.deg}}&deg;</p>
+      </div>
+      <div class="cityclouds">
+        <i class="fas fa-cloud"></i>
+        <p>{{this.city.currentWeather.clouds.all}}%</p>
       </div>
   </div>  
 
