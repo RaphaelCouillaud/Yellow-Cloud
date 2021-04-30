@@ -56,6 +56,7 @@ export default {
     justify-content: center;
     align-items: center;
     max-width: 1024px;
+    
 }
 .modalwrap {
     max-width: 480px;  

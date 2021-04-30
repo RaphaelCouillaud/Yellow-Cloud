@@ -10,7 +10,7 @@
       <div class="cityicon"><img :src="require(`../../public/img/${this.city.currentWeather.weather[0].icon}.png`)" alt=""></div>      
       <div class="citywindspeed">
         <i class="fas fa-wind"></i>
-        <p>{{this.city.currentWeather.wind.speed}}</p>
+        <p>{{Math.round(this.city.currentWeather.wind.speed)}}</p>
       </div>
       <div class="citywinddirection">
         <i class="far fa-compass"></i>
@@ -166,10 +166,24 @@ margin: 0 0 0 10px;
 }
 
 @media screen  and (min-width : 480px)
-{
- 
+{ 
  .gif img { 
   object-fit: fill;
+}
+}
+@media screen  and (max-width : 425px)
+{ 
+ .cityprops h2 {
+   font-size: 2.5em;  
+letter-spacing: 1px;
+ -webkit-text-stroke: 2px black; 
+ text-shadow: 3px 0 #fcd40c;
+}
+}
+@media screen  and (max-width : 350px)
+{  
+.cityweather p, .cityweather i {   
+   font-size: 1.25em; 
 }
 }
 </style>
