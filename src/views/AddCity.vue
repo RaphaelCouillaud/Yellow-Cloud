@@ -14,7 +14,7 @@ export default {
   name: 'AddCity',
   props: ['cities', 'edit'], //depuis vbind app.vue
   created() {
-    console.log(this.city);
+    
   },
   components: {
    City
